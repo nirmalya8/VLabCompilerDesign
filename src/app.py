@@ -1,6 +1,7 @@
 from flask import *  
 from comment import check_comment
 from identifier import check_identifier
+from pattern_rules import check_pattern
 app = Flask(__name__,static_folder='assets')  
   
 @app.route('/')
@@ -11,19 +12,6 @@ def homepage_1():
 def comment_page():
     return render_template('comment.html')
 
-# EXPERIMENT 1: Checking Comments
-@app.route('/aim1')  
-def aim_1():
-    return render_template('aim_1.html')#,title = title,aim = aim)  
-
-@app.route('/theory1')
-def theory_1():
-    pass
-
-@app.route('/procedure1')
-def procedure_1():
-    pass
-
 @app.route('/sim1',methods = ['POST', 'GET'])  
 def comment():  
    if request.method == 'POST':  
@@ -33,24 +21,24 @@ def comment():
    else: 
       return render_template("sim_1.html",inp="",result="")
 
-# EXPERIMENT 2: CHECKING IDENTIFIER NAMES
+@app.route('/stringPattern')
+def stringPattern():
+    return render_template('stringPattern.html')
 
+@app.route('/sim3',methods = ['POST', 'GET'])
+def pattern_check():
+    if request.method == 'POST':  
+      inp = request.form['Input']
+      result = check_pattern(inp)
+      print(result)   
+      return render_template("sim_3.html",inp = inp,result = result)
+    else: 
+      return render_template("sim_3.html",inp="",result="") 
 
-@app.route('/aim2')  
-def aim_2():  
-    aim= "To check for valid identifiers"
-    title =  "Check Identifier"
-    return render_template('aim.html',title = title,aim= aim)   
+@app.route('/identifier')
+def val_identifier():
+    return render_template('identifier.html')
 
-@app.route('/theory2')
-def theory_2():
-    pass
-    return ""
-
-@app.route('/procedure2')
-def procedure_2():
-    pass
-    return ""
 
 @app.route('/sim2',methods = ['POST', 'GET'])  
 def identifier():  
@@ -60,7 +48,9 @@ def identifier():
       print(result)   
       return render_template("sim_2.html",inp = inp,result = result)
    else: 
-      return render_template("sim_2.html",inp="",result="") 
+      return render_template("sim_2.html",inp="",result="")
+# EXPERIMENT 2: CHECKING IDENTIFIER NAMES
+
 
 
 # EXPERIMENT 2: LEXICAL ANALYZER
