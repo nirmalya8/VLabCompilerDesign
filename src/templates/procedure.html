@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<title>Compiler Design V-Lab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
+
+    html,
+    body {
+        min-height: 100%;
+    }
+
+    .layout-boxed html,
+    .layout-boxed body {
+        height: 100%;
+    }
+
+    body {
+        background-color: #ecf0f5;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    content-wrapper {
+        -webkit-transition: -webkit-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+        -moz-transition: -moz-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+        -o-transition: -o-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+        margin-left: 230px;
+        z-index: 820;
+    }
+
+    .layout-top-nav .content-wrapper {
+        margin-left: 0;
+    }
+
+    @media (max-width: 767px) {
+        .content-wrapper {
+            margin-left: 0;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .sidebar-collapse .content-wrapper {
+            margin-left: 0;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .sidebar-open .content-wrapper {
+            -webkit-transform: translate(230px, 0);
+            -ms-transform: translate(230px, 0);
+            -o-transform: translate(230px, 0);
+            transform: translate(230px, 0);
+        }
+    }
+
+    .content-wrapper {
+        min-height: 100%;
+        background-color: #ecf0f5;
+        z-index: 800;
+    }
+
+    body.hold-transition .content-wrapper .content-header {
+        position: relative;
+        padding: 15px 15px 0 15px;
+    }
+
+    .content-header>h1 {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    .content-header>h1>small {
+        font-size: 15px;
+        display: inline-block;
+        padding-left: 4px;
+        font-weight: 300;
+    }
+
+    .content-header>.breadcrumb {
+        float: right;
+        background: transparent;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 1px 5px;
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        border-radius: 2px;
+    }
+
+    .content-header>.breadcrumb>li>a {
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .content-header>.breadcrumb>li>a>.fa,
+    .content-header>.breadcrumb>li>a>.glyphicon,
+    .content-header>.breadcrumb>li>a>.ion {
+        margin-right: 5px;
+    }
+
+    .content-header>.breadcrumb>li+li:before {
+        content: '>\00a0';
+    }
+
+    @media (max-width: 991px) {
+        .content-header>.breadcrumb {
+            position: relative;
+            margin-top: 5px;
+            top: 0;
+            right: 0;
+            float: none;
+            background: #d2d6de;
+            padding-left: 10px;
+        }
+
+        .content-header>.breadcrumb li:before {
+            color: #97a0b3;
+        }
+    }
+
+    .h3part {
+        margin-left: 300px;
+    }
+
+    .prpart {
+        margin-left: 300px;
+        margin-right: 200px;
+    }
+</style>
+
+<body>
+
+    <div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-left" style="display:none" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+        <a href="aim.html" class="w3-bar-item w3-button">AIM</a>
+        <a href="theory.html" class="w3-bar-item w3-button">THEORY</a>
+        <a href="procedure.html" class="w3-bar-item w3-button">PROCEDURE</a>
+        <a href="simulation.html" class="w3-bar-item w3-button">SIMULATION</a>
+        <a href="home-page.html" class="w3-bar-item w3-button">HOME PAGE</a>
+    </div>
+
+    <div>
+        <button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">&#9776;</button>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1 align="center">
+                    CHECK COMMENT
+                </h1>
+            </section>
+            <section class="content">
+                <h3 class="h3part" style="margin-top:5%"> PROCEDURE </h3>
+                <p class="prpart" style="font-size:130%; margin-top:2%" align="justify">
+                    Read the input string.
+                    <br>Check whether the string is starting with '/' and check next character is '/' or '*'.
+                    <br>If condition satisfies the comment.
+                    <br>Else not a comment.
+                </p>
+            </section>
+        </div>
+
+    </div>
+    </div>
+
+
+    <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

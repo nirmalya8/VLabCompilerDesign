@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<title>VLAB</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+    background-color: rgb(250, 255, 223);
+    padding-left: 100px;
+    padding-right: 100px;
+
+}
+#mySidenav a {
+  position: absolute; /* Position them relative to the browser window */
+  left: -80px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 15px; /* 15px padding */
+  width: 100px; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 18px; /* Increase font size */
+  color: white; /* White text color */
+  border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+}
+
+#mySidenav a:hover {
+  left: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+#part1 {
+  top: 20px;
+  background-color: #8bdfc0;
+}
+
+#part2 {
+  top: 80px;
+  background-color: #b5ecf0; /* Blue */
+}
+
+#part3 {
+  top: 140px;
+  background-color: #e2b6f3; /* Red */
+}
+
+#part4 {
+  top: 200px;
+  background-color: rgb(185, 112, 162) /* Light Black */
+}
+.contact-form {
+  padding-top: 1px;
+}
+textarea{
+  width: 400px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 20px;
+  font-size: 18px;
+  border: 1px solid #dee7ec;
+}
+.section-title {
+  border-bottom: 2px solid #dee7ec;
+  font-size: 28px;
+  padding-bottom: 15px;
+  margin-bottom: 50px;
+}
+.registerbtn {
+  background-color: #a1b8af;
+  color: rgb(0, 0, 0);
+  font-size: medium;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 450px;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+.output-box{
+    padding-left: 800px;
+
+}
+
+
+</style>
+<body>
+  <div id="mySidenav" class="sidenav">
+    <a href="aim.html" id="part1">AIM</a>
+    <a href="theory.html" id="part2">THEORY</a>
+    <a href="procedure.html" id="part3">PROCEDURE</a>
+    <a href="simulation-page.html" id="part4">SIMULATION</a>
+    
+  </div>
+  <div class="main">
+    <form class="" action="/sim1" method = "POST">
+        <div class="contact-form">
+            <h3 class="section-title">SIMULATION</h3>
+            <h4 align="left">
+                INPUT AREA <span style="padding-left: 53%;">OUTPUT AREA</span>
+            </h4>
+            <textarea name = "Input"></textarea><textarea style="float:right">{{result}}</textarea></p>
+            <div class="output-box">
+                
+                
+
+            </div>
+            <p></p>
+            <button type="submit" class="registerbtn">Submit</button>
+            
+        </div>
+        
+     </form>
+ </div>
+     
+    
+</body>
