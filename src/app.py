@@ -1,12 +1,15 @@
 from flask import *  
 from comment import check_comment
 from identifier import check_identifier
-app = Flask(__name__)  
+app = Flask(__name__,static_folder='assets')  
   
-# @app.route('/')
+@app.route('/')
 def homepage_1():
-    ''' Homepage '''
-    pass
+    return render_template('index.html')
+
+@app.route('/comment')
+def comment_page():
+    return render_template('comment.html')
 
 # EXPERIMENT 1: Checking Comments
 @app.route('/aim1')  
