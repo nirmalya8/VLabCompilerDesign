@@ -153,15 +153,11 @@
         <button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">&#9776;</button>
         <div class="content-wrapper">
             <section class="content-header">
-                <h1 align="center">
-                    {{ title }}
-                </h1>
+                {% block title %} {% endblock %}
             </section>
             <section class="content">
                 <h3 class="h3part" style="margin-top:5%"> AIM </h3>
-                <p class="prpart" style="font-size:130%; margin-top:5%" align="justify">
-                    {{ aim }}
-                </p>
+                {% block aim %} {% endblock %}
             </section>
         </div>
 

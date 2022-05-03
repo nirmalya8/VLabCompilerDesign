@@ -92,26 +92,7 @@ textarea{
     <a href="simulation-page.html" id="part4">SIMULATION</a>
     
   </div>
-  <div class="main">
-    <form class="" action="/sim1" method = "POST">
-        <div class="contact-form">
-            <h3 class="section-title">SIMULATION</h3>
-            <h4 align="left">
-                INPUT AREA <span style="padding-left: 53%;">OUTPUT AREA</span>
-            </h4>
-            <textarea name = "Input"></textarea><textarea style="float:right">{{result}}</textarea></p>
-            <div class="output-box">
-                
-                
+  {% block form %}{% endblock %}
 
-            </div>
-            <p></p>
-            <button type="submit" class="registerbtn">Submit</button>
-            
-        </div>
-        
-     </form>
- </div>
-     
     
 </body>
