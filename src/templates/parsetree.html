@@ -69,7 +69,7 @@
           <br>
           <h3>Aim Of The Experiment</h3>
           <p> <!--class="fst-italic"-->
-            To test whether a given identifier is valid or not
+            To identify whether a given line is a single line comment, multiline comment or neither.
           </p>
         </div>
         <div class="col-lg-6">
@@ -77,6 +77,7 @@
           <br>
         <img src="assets/aim.png" class="img-fluid" alt="">
       </div> 
+
     </div>
 
   </div>
@@ -86,23 +87,26 @@
     <div class="container">
 
       <div class="row">
-        <!-- <div class="col-lg-6">
-          <img src="assets/img/about.png" class="img-fluid" alt="">
-        </div> -->
         <div class="col-lg-6">
             
           <img src="assets/theory.png" class="img-fluid" alt="">
         </div> 
+        <!-- <div class="col-lg-6">
+          <img src="assets/img/about.png" class="img-fluid" alt="">
+        </div> -->
         <div class="col-lg-6 pt-4 pt-lg-0 content">
           <h3>Theory</h3>
           <p> <!--class="fst-italic"-->
-            Identifier refers to name given to entities such as variables, functions, structures etc.
+            In programming, comments are hints that a programmer can add to make their code easier to read and understand.
+            Comments are completely ignored by C compilers. There are two ways to add comments in C:<br>
 
-            Identifiers must be unique. They are created to give a unique name to an entity to identify it during the execution of the program. 
-            A valid identifier can have letters (both uppercase and lowercase letters), digits and underscores.
-          The first letter of an identifier should be either a letter or an underscore.
-          You cannot use keywords like int, while etc. as identifiers.  
-            There is no rule on how long an identifier can be. However, you may run into problems in some compilers if the identifier is longer than 31 characters.
+            // - Single Line Comment<br>
+            /*...*/ - Multi-line Comment<br>
+            In C, a single line comment starts with //. It starts and ends in the same line.
+            In C programming, there is another type of comment that allows us to comment on multiple lines at once, they are multi-line comments.
+
+            To write multi-line comments, we use the /*....*/ symbol. 
+
           </p>
         </div>
     </div>
@@ -120,11 +124,13 @@
         <div class="col-lg-6 pt-4 pt-lg-0 content">
           <h3>Procedure</h3>
           <p> <!--class="fst-italic"-->
-            Read the given input string.
-          Check the initial character of the string is numerical or any special character except _ then print it is not a valid
-          identifier.
-          Otherwise print it as valid identifier if remaining characters of string doesnot contains any special characters
-          except _.
+           If the given input line starts with '//' then its a single line comment. If the given line starts with '/' and later ends with '/', then its a multiline comment. Else its not a comment.
+           The process is as follows <br>
+           <li>Take the input </li>
+            <li>Traverse the input line. </li>
+            <li>If two consecutive '/' are found for the first two positions of the input line, then its a single line comment.</li>
+            <li>If '/' is found at the starting and later '/' then it is a multiline comment.</li>
+            <li>if none of the condition satisfies then its not a comment.</li>
           </p>
         </div>
         <div class="col-lg-6">
@@ -142,14 +148,28 @@
       <div class="row">
         <!-- <div class="col-lg-6">
           <img src="assets/img/about.png" class="img-fluid" alt="">
-        </div> --><div class="col-lg-6">
-          <img src="assets/sim.png" class="img-fluid" alt="" height="150" width="200">
-        </div>
+        </div> -->
+        
         <div class="col-lg-6 pt-4 pt-lg-0 content">
           <h3>Simulation</h3>
-          <p> <!--class="fst-italic"-->
-            Click <a href="/sim2">here for simulation.</a>
-          </p>
+          <h4>Left Hand Derivation of a+b-c*d/e</h4>
+          <ul>
+            <li><i class="bi bi-check-circle"></i>  S-->S+b-c*d/e</li>
+            <li><i class="bi bi-check-circle"></i> S-->S+S-c*d/e</li>
+            <li><i class="bi bi-check-circle"></i> S-->S+S-S*d/e</li>
+            <li><i class="bi bi-check-circle"></i> S-->S+S-S*S/e</li>
+            <li><i class="bi bi-check-circle"></i> S-->S+S-S*S/S </li>         
+          </ul>
+         <br>
+         <br>
+          <h4>Right Hand Derivation of a+b-c*d/e</h4>
+          <ul>
+            <li><i class="bi bi-check-circle"></i>   S-->a+b-c*d/S</li>
+            <li><i class="bi bi-check-circle"></i> S-->a+b-c*S/S</li>
+            <li><i class="bi bi-check-circle"></i> S-->a+b-S*S/S</li>
+            <li><i class="bi bi-check-circle"></i> S-->a+S-S*S/S</li>
+            <li><i class="bi bi-check-circle"></i> S-->S+S-S*S/S </li>         
+          </ul>
         </div>
     </div>
 
@@ -170,7 +190,7 @@
         <div class="col-lg-6 pt-4 pt-lg-0 content">
           <h3>Discussion</h3>
           <p> <!--class="fst-italic"-->
-            The simulation can be used to enter identifier names and check if they are valid.
+            The program is dependent on the production rules and will change accordingly.
           </p>
         </div>
     </div>

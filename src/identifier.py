@@ -1,6 +1,6 @@
 import re
 RE_Special_Characters = "[\[@&~!#$\^\|{}\]:;<>?,\.']|\(\)|\(|\)|{}|\[\]|\""
-RE_Keywords = ["auto","break","case","char","const","continue","default","do","double","else","enum","extern","float","for","goto","if","int","long","register","return","short","signed","sizeof","static","struct","switch","typedef","union","unsigned","void","volatile","while","string","class","struc","include"]
+RE_Keywords = ["final","auto","break","case","char","const","continue","default","do","double","else","enum","extern","float","for","goto","if","int","long","register","return","short","signed","sizeof","static","struct","switch","typedef","union","unsigned","void","volatile","while","string","class","struc","include"]
 RE_Operators = "(\++)|(-)|(=)|(\*)|(/)|(%)|(--)|(<=)|(>=)"
 
 def check_identifier(name):
@@ -12,7 +12,7 @@ def check_identifier(name):
         elif name in RE_Keywords:
             return f"{name} is an invalid identifier"
         else:
-            return f"{name} is an valid identifier"
+            return f"{name} is a valid identifier"
 
 
 

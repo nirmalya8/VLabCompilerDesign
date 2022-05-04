@@ -69,8 +69,8 @@
             <br>
           <h3>Aim Of The Experiment</h3>
           <p> <!--class="fst-italic"-->
-            To check for patterns in strings
-          </p>
+            Design a lexical analyzer for given language and the lexical analyzer should ignore redundant spaces, tabs and new lines. It should also ignore comments. Although the syntax specification states that identifiers can be arbitrarily long, you may restrict the length to some reasonable value.   
+        </p>
         </div>
 
         <div class="col-lg-6">
@@ -94,12 +94,16 @@
         <div class="col-lg-6 pt-4 pt-lg-0 content">
           <h3>Theory</h3>
           <p> <!--class="fst-italic"-->
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a lectus ornare, condimentum velit non, fermentum ipsum. Quisque rhoncus vehicula elit, a scelerisque augue tincidunt vel. Etiam mattis, nulla ac consequat ullamcorper, ipsum libero sagittis nulla, sit amet rutrum nunc urna at augue. Aliquam urna orci, vehicula id vehicula sed, commodo non purus. Vestibulum faucibus auctor augue in condimentum. Pellentesque tempus non velit a porttitor. Mauris in tellus non sem rutrum gravida. Vivamus nec mattis sem. Aenean sit amet tristique augue. Sed auctor arcu sit amet elit semper congue. Aliquam rhoncus id neque eu porttitor. Sed pulvinar tempor congue.
-
-Etiam neque leo, eleifend non consequat vel, convallis sed dui. Etiam scelerisque varius consequat. Phasellus quam mi, scelerisque in mi eu, tempor tempus libero. Aenean vel urna vel diam dapibus porta. Cras eget velit commodo, consectetur nunc id, porta nulla. In venenatis facilisis orci, ut lobortis nisi feugiat imperdiet. Fusce ac eros mattis, venenatis risus eget, mattis nibh. Sed iaculis metus tortor, ut pulvinar dolor sodales ac. Quisque fermentum congue egestas. Vestibulum sagittis felis ex, lobortis hendrerit nunc tempus a. Cras pellentesque a ligula quis tempor. Aenean sit amet risus nec lectus molestie blandit. Ut lacinia, leo non faucibus sagittis, nisl lacus finibus libero, eu malesuada tortor eros a mi. Donec lorem metus, fringilla ac nunc vulputate, posuere dictum ex. Vestibulum eros justo, maximus a rutrum a, fringilla in mi.
-
-Phasellus viverra placerat felis eget fermentum. Morbi at tellus at augue vestibulum ultricies vel id augue. Pellentesque dignissim malesuada nisl consequat pellentesque. Nulla bibendum sit amet nisi at euismod. Proin et maximus arcu. Phasellus ac sem commodo, eleifend lorem sit amet, varius enim. Proin semper vestibulum suscipit. Sed quis aliquam mauris. Nullam eget odio accumsan, semper arcu eget, pharetra risus. In id turpis placerat, rhoncus urna eget, malesuada dui. Nullam quis dignissim enim. Praesent tincidunt nunc mollis fermentum venenatis.
-          </p>
+            Lexical Analysis is the first phase of compiler also known as scanner. It converts the input program into a sequence of Tokens. The lexical analyser breaks these syntaxes into a series of tokens, by removing any whitespace or comments in the source code.  
+            Tokens
+            Lexemes are said to be a sequence of characters (alphanumeric) in a token. There are some predefined rules for every lexeme to be identified as a valid token. These rules are defined by grammar rules, by means of a pattern. A pattern explains what can be a token, and these patterns are defined by means of regular expressions. In programming language, keywords, constants, identifiers, strings, numbers, operators and punctuations symbols can be considered as tokens.
+            Specifications of Tokens
+            Alphabets
+            Any finite set of symbols {0,1} is a set of binary alphabets, {0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F} is a set of Hexadecimal alphabets, {a-z, A-Z} is a set of English language alphabets.
+            Strings
+            Any finite sequence of alphabets (characters) is called a string. Length of the string is the total number of occurrence of alphabets, e.g., the length of the string “compiler” is 8. A string having no alphabets, i.e., a string of zero length is known as an empty string and is denoted by ε (epsilon).
+            Lexical analyzer scans the entire source code of the program. It identifies each token one by one. Scanners are usually implemented to produce tokens only when requested by a parser.  
+        </p>
         </div>
     </div>
 
@@ -114,8 +118,13 @@ Phasellus viverra placerat felis eget fermentum. Morbi at tellus at augue vestib
         <div class="col-lg-6 pt-4 pt-lg-0 content">
           <h3>Procedure</h3>
           <p> <!--class="fst-italic"-->
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a lectus ornare, condimentum velit non, fermentum ipsum. Quisque rhoncus vehicula elit, a scelerisque augue tincidunt vel. Etiam mattis, nulla ac consequat ullamcorper, ipsum libero sagittis nulla, sit amet rutrum nunc urna at augue. Aliquam urna orci, vehicula id vehicula sed, commodo non purus. Vestibulum faucibus auctor augue in condimentum. Pellentesque tempus non velit a porttitor. Mauris in tellus non sem rutrum gravida. Vivamus nec mattis sem. Aenean sit amet tristique augue. Sed auctor arcu sit amet elit semper congue. Aliquam rhoncus id neque eu porttitor. Sed pulvinar tempor congue.
-          </p>
+            Here is how recognition of tokens in compiler design works-
+            <li>“Get next token” is a command which is sent from the parser to the lexical analyzer.</li>
+            <li> On receiving this command, the lexical analyzer scans the input until it finds the next token.</li>
+            <li>It returns the token to Parser.</li>
+            <li>Lexical Analyzer skips whitespaces and comments while creating these tokens. If any error is present, then Lexical analyzer will correlate that error with the source file and line number.</li>
+            
+        </p>
         </div>
         <div class="col-lg-6">
             <img src="assets/procedure.png" class="img-fluid" alt="" width="300" 
@@ -158,7 +167,8 @@ Phasellus viverra placerat felis eget fermentum. Morbi at tellus at augue vestib
         <div class="col-lg-6 pt-4 pt-lg-0 content">
           <h3>Discussion</h3>
           <p> <!--class="fst-italic"-->
-            Etiam neque leo, eleifend non consequat vel
+            The main task of lexical analysis is to read input characters in the code and produce tokens.
+            If the lexical analyzer detects that the token is invalid, it generates an error. The role of Lexical Analyzer in compiler design is to read character streams from the source code, check for legal tokens, and pass the data to the syntax analyzer when it demands. 
           </p>
         </div>
     </div>
