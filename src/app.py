@@ -2,6 +2,8 @@ from flask import *
 from comment import check_comment
 from identifier import check_identifier
 from pattern_rules import check_pattern
+from valoperator import operator_check
+from lexical_analyzer import tokenize
 app = Flask(__name__,static_folder='assets')  
   
 @app.route('/')
@@ -21,20 +23,6 @@ def comment():
    else: 
       return render_template("sim_1.html",inp="",result="")
 
-@app.route('/stringPattern')
-def stringPattern():
-    return render_template('stringPattern.html')
-
-@app.route('/sim3',methods = ['POST', 'GET'])
-def pattern_check():
-    if request.method == 'POST':  
-      inp = request.form['Input']
-      result = check_pattern(inp)
-      print(result)   
-      return render_template("sim_3.html",inp = inp,result = result)
-    else: 
-      return render_template("sim_3.html",inp="",result="") 
-
 @app.route('/identifier')
 def val_identifier():
     return render_template('identifier.html')
@@ -49,17 +37,49 @@ def identifier():
       return render_template("sim_2.html",inp = inp,result = result)
    else: 
       return render_template("sim_2.html",inp="",result="")
-# EXPERIMENT 2: CHECKING IDENTIFIER NAMES
+
+@app.route('/stringPattern')
+def stringPattern():
+    return render_template('stringPattern.html')
+
+@app.route('/sim3',methods = ['POST', 'GET'])
+def pattern_check():
+    if request.method == 'POST':  
+      inp = request.form['Input']
+      result = check_pattern(inp)
+      print(result)   
+      return render_template("sim_3.html",inp = inp,result = result)
+    else: 
+      return render_template("sim_3.html",inp="",result="") 
 
 
+@app.route('/operator')
+def operator():
+    return render_template('operator.html')
 
-# EXPERIMENT 2: LEXICAL ANALYZER
+@app.route('/sim4',methods = ['POST', 'GET'])
+def check_operator():
+    if request.method == 'POST':  
+      inp = request.form['Input']
+      result = operator_check(inp)
+      print(result)   
+      return render_template("sim_4.html",inp = inp,result = result)
+    else: 
+      return render_template("sim_4.html",inp="",result="")
 
-@app.route('/aim3')  
-def aim_3():  
-    title = "Lexical Analyser"
-    aim="Break code into tokens"
-    return render_template('aim.html',title = title,aim=aim)  
+@app.route('/lexical')
+def lexical():
+    return render_template('lexical.html')
+
+@app.route('/sim5',methods = ['POST', 'GET'])
+def tokens():
+    if request.method == 'POST':  
+      inp = request.form['Input']
+      result = tokenize(inp)
+      print(result)   
+      return render_template("sim_5.html",inp = inp,result = result)
+    else: 
+      return render_template("sim_5.html",inp="",result="")
  
      
 

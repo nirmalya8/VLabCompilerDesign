@@ -1,0 +1,29 @@
+{% extends "simulation-page.html" %}
+
+
+{% block form %}
+</div>
+<div class="main">
+    <form class="" action="/sim4" method = "POST">
+      <div class="contact-form">
+        <h3 class="section-title">SIMULATION: VALID OPERATOR</h3>
+          <h4 align="left">
+              INPUT AREA <span style="padding-left: 53%;">OUTPUT AREA</span>
+          </h4>
+          <textarea name = "Input">{{inp}}</textarea>
+
+<textarea style="float:right">{{result}}</textarea></p> <!--style="float:down"-->
+            <div class="output-box">
+                
+                
+
+            </div>
+          <p></p>
+          <button type="submit" class="registerbtn">Submit</button>
+          
+      </div>
+      
+   </form>
+</div>
+
+{% endblock %}
