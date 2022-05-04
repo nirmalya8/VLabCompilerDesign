@@ -80,6 +80,10 @@ def tokens():
       return render_template("sim_5.html",inp = inp,result = result)
     else: 
       return render_template("sim_5.html",inp="",result="")
+
+@app.route('/parse')
+def parse():
+    return render_template('parsetree.html')
  
      
 
