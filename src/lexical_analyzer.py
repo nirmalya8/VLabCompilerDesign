@@ -43,7 +43,8 @@ def tokenize(source_code):
     #             tokens.append(['Numeral', word])
     #         word = ""
 
-
+    if(source_code[0]=='/' and source_code[1]=='/' or source_code[1]=='*'):
+        return "It is a comment"
 
     # Loop through each source code word.
     code = code.split()
